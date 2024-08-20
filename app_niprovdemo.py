@@ -3,13 +3,21 @@ import vertexai
 from vertexai.language_models import ChatModel, InputOutputTextPair, ChatMessage
 import streamlit as st
 
-os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_KEY"]["key"]
+#os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_KEY"]["key"]
 
-#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path
+os.environ["type"] = st.secrets["GOOGLE_CREDENTIALS"]["type"]
+os.environ["project_id"] = st.secrets["GOOGLE_CREDENTIALS"]["project_id"]
+os.environ["private_key_id"] = st.secrets["GOOGLE_CREDENTIALS"]["private_key_id"]
+os.environ["private_key"] = st.secrets["GOOGLE_CREDENTIALS"]["private_key"]
+os.environ["client_email"] = st.secrets["GOOGLE_CREDENTIALS"]["client_email"]
+os.environ["client_id"] = st.secrets["GOOGLE_CREDENTIALS"]["client_id"]
+os.environ["auth_uri"] = st.secrets["GOOGLE_CREDENTIALS"]["auth_uri"]
+os.environ["token_uri"] = st.secrets["GOOGLE_CREDENTIALS"]["token_uri"]
+os.environ["auth_provider_x509_cert_url"] = st.secrets["GOOGLE_CREDENTIALS"]["auth_provider_x509_cert_url"]
+os.environ["client_x509_cert_url"] = st.secrets["GOOGLE_CREDENTIALS"]["client_x509_cert_url"]
+os.environ["universe_domain"] = st.secrets["GOOGLE_CREDENTIALS"]["universe_domain"]
 #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\AI\Google\agentdata\emergys-genai2.json'
-#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = str(st.secrets["GOOGLE_CREDENTIALS"])
-#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = st.secrets["GOOGLE_CREDENTIALS"]["credentials"]
-#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = emergys_genai
+
 import vertexai
 vertexai.init(project="emergys-genai", location="us-central1")
 
